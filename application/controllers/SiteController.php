@@ -11,7 +11,8 @@ class SiteController extends CController
 	{
 		parent::__construct($this->id);//, $this->module);
 
-		$this->file = File::model();
+	//	$this->file = File::model();
+		$this->file = new File();
 	}
 
 	/**
@@ -19,8 +20,26 @@ class SiteController extends CController
 	 */
 	public function actionIndex()
 	{
+		$dir = dirname(__FILE__).'../../userfiles/bopper/';
+		$dir = realpath($dir);
 		if (isset($_GET['files']))
-			return $this->file->listFiles();
-		echo $this->file->greeting();
+			$this->listFiles($dir);
+	}
+
+	private function listFiles($dir)
+	{
+		$data =	$this->file->listFiles($dir);
+		return $this->renderJSON($data);
+	}
+
+	/**
+	 * Return data to browser as JSON and end application.
+	 * @param array $data
+	 */
+	protected function renderJSON($data)
+	{
+		header('Content-type: application/json');
+		echo json_encode($data, JSON_PRETTY_PRINT);
+		Yii::app()->end();
 	}
 }

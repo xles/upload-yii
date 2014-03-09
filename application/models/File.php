@@ -1,30 +1,50 @@
 <?php
 
-class File extends CActiveRecord
+class File extends CFormModel //CActiveRecord
 {
-	/**
-	 * @var integer ID of this record
-	 * @soap
-	 */
-	public $id;
-	/**
-	 * @var string name
-	 * @soap
-	 */
-	public $name;
-	/**
-	 * @var string phone number
-	 * @soap
-	 */
-	public $phone;
+	private $hide = ['.','..'];
 
-	public function greeting()
+	public function _listFiles()
 	{
-		return 'hello world';
+		$file = dirname(__FILE__).'/../data/files.json';
+		$data = file_get_contents($file);
+		return CJSON::decode($data);
+		//return 'hello world';
 	}
+
+	public function listFiles($target_dir) 
+	{
+		if ($target_dir[strlen($target_dir)-1] != '/')
+			$target_dir .= '/';
+
+		if ($handle = opendir($target_dir)) { 
+			while (false !== ($file = readdir($handle))) { 
+				if (!in_array($file, $this->hide)) { 
+					$files[] = $file;
+				} 
+			} 
+			closedir($handle); 
+		} else {
+			return false;
+		}
+		
+		$finfo = new finfo(FILEINFO_MIME);
+		foreach ($files as $file) {
+			$path = $target_dir.$file;
+			$tmp[] = [
+				'name'     => $file,
+				'ext'      => strrchr($file, "."),
+				'path'     => $path,
+				'size'     => @filesize($path),
+				'modified' => filemtime($path),
+				'mimetype' => $finfo->file($path)
+			];
+		}
+		return $tmp;
+	} 	  
 
 	public static function model($className=__CLASS__)
 	{
-		return parent::model($className);
+//		return parent::model($className);
 	}
 }

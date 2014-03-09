@@ -10,6 +10,9 @@ class SiteController extends CController
 	 */
 	public function actionIndex()
 	{
-		echo 'Hello World';
+		$m = File::model();
+		if (isset($_GET['files']))
+			return 0;
+		echo $m->greeting();
 	}
 }

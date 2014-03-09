@@ -1,0 +1,44 @@
+{
+    "users": [
+        {
+            "name": ".git",
+            "path": "..\/.git",
+            "size": 6573
+        },
+        {
+            "name": ".sass-cache",
+            "path": "..\/.sass-cache",
+            "size": 1496
+        },
+        {
+            "name": ".tmp",
+            "path": "..\/.tmp",
+            "size": 102
+        },
+        {
+            "name": "app",
+            "path": "..\/app",
+            "size": 35992
+        },
+        {
+            "name": "backend",
+            "path": "..\/backend",
+            "size": 14107
+        },
+        {
+            "name": "dist",
+            "path": "..\/dist",
+            "size": 34606
+        },
+        {
+            "name": "node_modules",
+            "path": "..\/node_modules",
+            "size": 34394
+        },
+        {
+            "name": "test",
+            "path": "..\/test",
+            "size": 958
+        }
+    ]
+}

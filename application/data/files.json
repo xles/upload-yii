@@ -1,0 +1,69 @@
+{
+    /* this is a comment */
+    "files": [
+        {
+            "name": "conf.default.php",
+            "ext": "php",
+            "path": ".\/conf.default.php",
+            "size": 100,
+            "modified": 1393791003,
+            "mimetype": "text\/x-php; charset=us-ascii"
+        }, // and so is this.
+        {
+            "name": "conf.json",
+            "ext": "json",
+            "path": ".\/conf.json",
+            "size": 152,
+            "modified": 1393793737,
+            "mimetype": "text\/plain; charset=us-ascii"
+        },
+        {
+            "name": "download.php",
+            "ext": "php",
+            "path": ".\/download.php",
+            "size": 675,
+            "modified": 1393784472,
+            "mimetype": "text\/x-php; charset=us-ascii"
+        },
+        {
+            "name": "file.php",
+            "ext": "php",
+            "path": ".\/file.php",
+            "size": 2152,
+            "modified": 1393784472,
+            "mimetype": "text\/html; charset=us-ascii"
+        },
+        {
+            "name": "register.php",
+            "ext": "php",
+            "path": ".\/register.php",
+            "size": 5715,
+            "modified": 1393784472,
+            "mimetype": "text\/x-php; charset=iso-8859-1"
+        },
+        {
+            "name": "test.php",
+            "ext": "php",
+            "path": ".\/test.php",
+            "size": 246,
+            "modified": 1393796445,
+            "mimetype": "text\/x-php; charset=us-ascii"
+        },
+        {
+            "name": "upload.php",
+            "ext": "php",
+            "path": ".\/upload.php",
+            "size": 2932,
+            "modified": 1393796755,
+            "mimetype": "text\/x-php; charset=us-ascii"
+        },
+        {
+            "name": "upload2.php",
+            "ext": "php",
+            "path": ".\/upload2.php",
+            "size": 2135,
+            "modified": 1393784472,
+            "mimetype": "text\/x-php; charset=iso-8859-1"
+        }
+    ]
+}

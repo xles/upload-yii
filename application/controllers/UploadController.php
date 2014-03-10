@@ -23,9 +23,9 @@ class UploadController extends CController {
 
 	public function __construct()
 	{
-		$json = file_get_contents("conf.json");
-		if (($this->config = json_decode($json)) == NULL)
-			throw new Exception('Unable to parse configuration file.');
+	//	$json = file_get_contents("conf.json");
+	//	if (($this->config = json_decode($json)) == NULL)
+	//		throw new Exception('Unable to parse configuration file.');
 
 		#$this->connect();
 	}

@@ -20,16 +20,17 @@ class SiteController extends CController
 	 */
 	public function actionIndex()
 	{
+		$uploadCtrl = Yii::app()->createController('upload')[0];
+		var_dump(
+			$uploadCtrl
+		);
 		$dir = dirname(__FILE__).'/../../userfiles/bopper/';
 		if (isset($_GET['files']))
 			$this->listFiles($dir);
-		
+
 		if (isset($_GET['upload'])) {
 			header('Content-type: text/plain');
-			echo $_SERVER['REQUEST_METHOD'];
-			echo "\n";
-			echo $_SERVER['QUERY_STRING'];
-			echo "\n";
+			var_dump($_SERVER);
 			var_dump($_REQUEST);
 		}
 	}

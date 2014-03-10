@@ -20,15 +20,23 @@ class SiteController extends CController
 	 */
 	public function actionIndex()
 	{
-		$dir = dirname(__FILE__).'../../userfiles/bopper/';
-		$dir = realpath($dir);
+		$dir = dirname(__FILE__).'/../../userfiles/bopper/';
 		if (isset($_GET['files']))
 			$this->listFiles($dir);
+		
+		if (isset($_GET['upload'])) {
+			header('Content-type: text/plain');
+			echo $_SERVER['REQUEST_METHOD'];
+			echo "\n";
+			echo $_SERVER['QUERY_STRING'];
+			echo "\n";
+			var_dump($_REQUEST);
+		}
 	}
 
 	private function listFiles($dir)
 	{
-		$data =	$this->file->listFiles($dir);
+		$data['files'] = $this->file->listFiles($dir);
 		return $this->renderJSON($data);
 	}
 

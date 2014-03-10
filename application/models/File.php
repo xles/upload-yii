@@ -34,7 +34,7 @@ class File extends CFormModel //CActiveRecord
 			$tmp[] = [
 				'name'     => $file,
 				'ext'      => strrchr($file, "."),
-				'path'     => $path,
+				'path'     => realpath($path),
 				'size'     => @filesize($path),
 				'modified' => filemtime($path),
 				'mimetype' => $finfo->file($path)

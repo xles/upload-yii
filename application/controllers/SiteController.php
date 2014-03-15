@@ -35,7 +35,7 @@ class SiteController extends CController
 		}
 	}
 
-	private function listFiles($dir)
+	private function actionListFiles($dir)
 	{
 		$data['files'] = $this->file->listFiles($dir);
 		return $this->renderJSON($data);
